@@ -17,11 +17,11 @@ log:
 
 mysql:
   driver: 'mysql'
-  host: '47.94.169.240'
+  host: '82.156.175.147'
   port: 3306
-  database: 'test'
-  username: 'root'
-  password: 'mysql@yang1234'
+  database: 'im'
+  username: 'IM'
+  password: 'IM@yang719206'
   charset: 'utf8mb4'
   max_idle_conns: 10
   max_open_conns: 100
@@ -36,7 +36,7 @@ jwt:
   refresh_grace_period: 43200
 
 redis:
-  host: '47.94.169.240'
+  host: '82.156.175.147'
   port: 6379
   db: 0
   password: 'redis@yang'

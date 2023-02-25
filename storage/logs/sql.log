@@ -27820,3 +27820,201 @@
 
 2022/09/22 15:29:23 D:/1/0/golang/src/go-test/bootstrap/db.go:62 SLOW SQL >= 200ms
 [423.106ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'test' AND table_name = 'articles' AND index_name = 'idx_articles_deleted_at'
+
+2023/02/25 20:49:04 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[74.990ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:49:04 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253
+[144.691ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:49:05 D:/1/0/golang/src/go-test/bootstrap/db.go:62
+[145.964ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'im' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/02/25 20:49:05 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[61.135ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:49:05 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253
+[136.426ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:49:05 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:163
+[78.147ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/02/25 20:49:05 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:181
+[138.095ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'im' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/02/25 20:49:06 D:/1/0/golang/src/go-test/bootstrap/db.go:62 SLOW SQL >= 200ms
+[721.583ms] [rows:0] ALTER TABLE `users` ADD `signature` varchar(191) DEFAULT '' COMMENT '个性签名'
+
+2023/02/25 20:49:06 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[66.080ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:49:06 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253 SLOW SQL >= 200ms
+[251.158ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:49:06 D:/1/0/golang/src/go-test/bootstrap/db.go:62
+[191.221ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'im' AND table_name = 'users' AND index_name = 'idx_users_mobile'
+
+2023/02/25 20:49:06 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[75.149ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:49:06 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253
+[131.294ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:49:07 D:/1/0/golang/src/go-test/bootstrap/db.go:62 SLOW SQL >= 200ms
+[259.306ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'im' AND table_name = 'users' AND index_name = 'idx_users_deleted_at'
+
+2023/02/25 20:49:07 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[68.035ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:49:07 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253
+[161.688ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:49:07 D:/1/0/golang/src/go-test/bootstrap/db.go:62
+[165.889ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'im' AND table_name = 'media' AND table_type = 'BASE TABLE'
+
+2023/02/25 20:49:07 D:/1/0/golang/src/go-test/bootstrap/db.go:62 SLOW SQL >= 200ms
+[243.863ms] [rows:0] CREATE TABLE `media` (`id` bigint unsigned AUTO_INCREMENT,`disk_type` varchar(20) NOT NULL COMMENT '存储类型',`src_type` tinyint NOT NULL COMMENT '链接类型 1相对路径 2外链',`src` varchar(191) NOT NULL COMMENT '资源链接',`created_at` datetime NULL,`updated_at` datetime NULL,PRIMARY KEY (`id`),INDEX `idx_media_disk_type` (`disk_type`))
+
+2023/02/25 20:49:07 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[86.521ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:49:08 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253
+[147.397ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:49:08 D:/1/0/golang/src/go-test/bootstrap/db.go:62
+[145.125ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'im' AND table_name = 'categories' AND table_type = 'BASE TABLE'
+
+2023/02/25 20:49:08 D:/1/0/golang/src/go-test/bootstrap/db.go:62 SLOW SQL >= 200ms
+[221.804ms] [rows:0] CREATE TABLE `categories` (`id` bigint unsigned AUTO_INCREMENT,`name` varchar(191) COMMENT '分类名称',`created_at` datetime NULL,`updated_at` datetime NULL,PRIMARY KEY (`id`))
+
+2023/02/25 20:49:08 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[71.372ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:49:08 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253
+[135.476ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:49:08 D:/1/0/golang/src/go-test/bootstrap/db.go:62
+[121.523ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'im' AND table_name = 'articles' AND table_type = 'BASE TABLE'
+
+2023/02/25 20:49:08 D:/1/0/golang/src/go-test/bootstrap/db.go:62
+[141.198ms] [rows:0] CREATE TABLE `articles` (`id` bigint unsigned AUTO_INCREMENT,`created_at` datetime NULL,`updated_at` datetime NULL,`deleted_at` datetime NULL,`category_id` bigint unsigned,`content` text COMMENT '文章内容',`title` varchar(191) COMMENT ' 文章标题 ',PRIMARY KEY (`id`),INDEX `idx_articles_deleted_at` (`deleted_at`))
+
+2023/02/25 20:51:09 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[56.426ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:51:09 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253
+[121.656ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:51:09 D:/1/0/golang/src/go-test/bootstrap/db.go:62
+[127.725ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'im' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/02/25 20:51:09 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[69.325ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:51:09 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253
+[129.338ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:51:09 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:163
+[71.589ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/02/25 20:51:10 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:181
+[132.611ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'im' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/02/25 20:51:10 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[56.359ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:51:10 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253
+[128.549ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:51:10 D:/1/0/golang/src/go-test/bootstrap/db.go:62
+[133.615ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'im' AND table_name = 'users' AND index_name = 'idx_users_deleted_at'
+
+2023/02/25 20:51:10 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[60.539ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:51:10 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253
+[134.569ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:51:10 D:/1/0/golang/src/go-test/bootstrap/db.go:62
+[125.811ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'im' AND table_name = 'users' AND index_name = 'idx_users_mobile'
+
+2023/02/25 20:51:10 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[74.353ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:51:10 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253
+[140.294ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:51:11 D:/1/0/golang/src/go-test/bootstrap/db.go:62
+[150.433ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'im' AND table_name = 'media' AND table_type = 'BASE TABLE'
+
+2023/02/25 20:51:11 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[65.335ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:51:11 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253
+[132.677ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:51:11 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:163
+[90.355ms] [rows:-] SELECT * FROM `media` LIMIT 1
+
+2023/02/25 20:51:11 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:181
+[138.056ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'im' AND table_name = 'media' ORDER BY ORDINAL_POSITION
+
+2023/02/25 20:51:11 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[60.901ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:51:11 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253
+[125.495ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:51:11 D:/1/0/golang/src/go-test/bootstrap/db.go:62
+[142.273ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'im' AND table_name = 'media' AND index_name = 'idx_media_disk_type'
+
+2023/02/25 20:51:11 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[76.071ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:51:12 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253
+[138.056ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:51:12 D:/1/0/golang/src/go-test/bootstrap/db.go:62 SLOW SQL >= 200ms
+[247.692ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'im' AND table_name = 'categories' AND table_type = 'BASE TABLE'
+
+2023/02/25 20:51:12 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[63.344ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:51:12 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253
+[146.106ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:51:12 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:163
+[73.391ms] [rows:-] SELECT * FROM `categories` LIMIT 1
+
+2023/02/25 20:51:12 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:181
+[151.427ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'im' AND table_name = 'categories' ORDER BY ORDINAL_POSITION
+
+2023/02/25 20:51:12 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[67.661ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:51:12 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253
+[125.229ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:51:13 D:/1/0/golang/src/go-test/bootstrap/db.go:62
+[134.848ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'im' AND table_name = 'articles' AND table_type = 'BASE TABLE'
+
+2023/02/25 20:51:13 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[65.674ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:51:13 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253
+[134.953ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:51:13 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:163
+[63.412ms] [rows:-] SELECT * FROM `articles` LIMIT 1
+
+2023/02/25 20:51:13 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:181
+[132.400ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'im' AND table_name = 'articles' ORDER BY ORDINAL_POSITION
+
+2023/02/25 20:51:13 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:250
+[59.592ms] [rows:-] SELECT DATABASE()
+
+2023/02/25 20:51:13 D:/1/0/golang/pkg/mod/gorm.io/driver/mysql@v1.3.6/migrator.go:253
+[117.985ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'im%' ORDER BY SCHEMA_NAME='im' DESC,SCHEMA_NAME limit 1
+
+2023/02/25 20:51:13 D:/1/0/golang/src/go-test/bootstrap/db.go:62
+[131.504ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'im' AND table_name = 'articles' AND index_name = 'idx_articles_deleted_at'
